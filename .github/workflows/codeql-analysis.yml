@@ -2,11 +2,13 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main # Run on merges into the main branch
   pull_request:
-    branches: [ master ]
+    branches:
+      - main # Run on pull requests targeting the main branch
   schedule:
-    - cron: '0 1 * * 1' # Weekly run on Mondays at 1:00 AM UTC
+    - cron: '0 1 * * 1' # Optional: Weekly run on Mondays at 1:00 AM UTC
 
 jobs:
   analyze:
@@ -15,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'csharp' ] # Specify the language used in your project
+        language: [ 'csharp' ] # Specify the languages used in your project
 
     steps:
     - name: Checkout repository
