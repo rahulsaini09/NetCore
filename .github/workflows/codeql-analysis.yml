@@ -3,10 +3,10 @@ name: "CodeQL Analysis"
 on:
   push:
     branches:
-      - main # Run on merges into the main branch
+      - master # Run on pushes to the master branch
   pull_request:
     branches:
-      - main # Run on pull requests targeting the main branch
+      - master # Run on pull requests targeting the master branch
   schedule:
     - cron: '0 1 * * 1' # Optional: Weekly run on Mondays at 1:00 AM UTC
 
